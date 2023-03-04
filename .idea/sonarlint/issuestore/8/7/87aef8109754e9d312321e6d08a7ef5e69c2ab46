@@ -1,0 +1,7 @@
+
+\
+java:S1192"FDefine a constant instead of duplicating this literal "Apple" 3 times.(îûõú
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•Ë™Ğûÿÿÿÿ
+N	java:S106
+"9Replace this use of System.out or System.err by a logger.(ŞŒğÖ
+V	java:S125"<This block of commented-out lines of code should be removed.(õ©ÖÛüÿÿÿÿ

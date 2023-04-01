@@ -14,6 +14,21 @@ public class Node{
         this.value=value;
     }
 }
+
+public boolean contain(int value){
+    Node temp=root;
+    while(temp!=null){
+        if(value<temp.value){
+temp=temp.left;
+        } else if (value>temp.value) {
+            temp=temp.right;
+
+        } else{
+            return true;
+        }
+    }
+return false;
+}
 public boolean insert(int value){
 
     Node newNode = new Node(value);

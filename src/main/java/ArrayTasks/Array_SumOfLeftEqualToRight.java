@@ -12,8 +12,7 @@ public class Array_SumOfLeftEqualToRight {
 
      */
     public static void main(String[] args) {
-        int [] array={4,9,1,3,6,4};
-        System.out.println(equilibrium1(array));
+
     }
 
     public static int equilibrium1(int[] array) {

@@ -44,30 +44,31 @@ public class Main {
     }
 
     public static Character firstNonRepeatingChar(String word) { //"leetcode"
-        Map<Character, Integer> myhashMap = new HashMap<>();
-        char[] wordArray = word.toLowerCase().toCharArray();
-        List<Character> repeatedChar = new ArrayList<>();
 
+        char[] wordArray=word.toCharArray();// [L,L,A,A,U,G,H,H,L]
+        Map<Character,Integer> myMap=new HashMap<>();
+        List<Character> repeatedChar=new ArrayList<>();//1,2,1,2,2
 
-        for (char letter : wordArray) {
-            if (myhashMap.containsKey(letter)) {//
-                repeatedChar.add(letter);//repeated ones
-            } else {
-                myhashMap.put(letter, 1);// nonRepeated ones
+        for(char letter: wordArray){//
+            if(myMap.containsKey(letter)){//
+                repeatedChar.add(letter);// repeated letters L,A,H
+            } else{
+                myMap.put(letter,1);// L,A,U,G,H
 
             }
         }
+// iterate through the input string again to find the first non-repeating character
+ for( char letter:wordArray){// [L,L,A,A,U,G,H,H,L]
 
-        // iterate through the input string again to find the first non-repeating character
-        for (char letter : wordArray) {
-            if (!repeatedChar.contains(letter) && myhashMap.get(letter) == 1) {
-                return letter;
-            }
 
-        }
-        return null;
+     if(!repeatedChar.contains(letter) && myMap.containsKey(letter)) { //[L,A,H] COMPARING [L,L,A,A,U,G,H,H,L]
+         return letter;
+     }
+     }
+     return null;
+ }
 
     }
     // if no non-repeating characters were found, return null
 
-}
+

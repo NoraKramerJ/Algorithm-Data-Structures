@@ -8,12 +8,32 @@ public class Main {
     public static void main(String[] args) {
         HashTable myHashTable = new HashTable();
         //  myHashTable.printTable();
-        System.out.println(firstNonRepeatingChar("leetcode"));
-        System.out.println(firstNonRepeatingChar("hello"));
-        System.out.println(firstNonRepeatingChar("aabbcc"));
+        System.out.println(firstUniqChar("leetcode"));
+        System.out.println(firstUniqChar("hello"));
+        System.out.println(firstUniqChar("aabbcc"));
 
 
     }
+
+    public static int firstUniqChar(String s) {
+        Map<Character,Integer> myMap=new HashMap<>();
+        List<Character> repeatedChar=new ArrayList<>();
+        char[] word=s.toLowerCase().toCharArray();
+        for(char letter:word){
+            if(myMap.containsKey(letter)){
+                repeatedChar.add(letter);
+            } else{
+               myMap.put(letter,0);
+            }
+        }
+        for(int i=0;i< word.length;i++ ){
+            if(!repeatedChar.contains(word[i]) && myMap.containsKey(word[i])){
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
     public static boolean itemInCommon(int[] array1, int[] array2) {
 

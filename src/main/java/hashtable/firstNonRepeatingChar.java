@@ -13,10 +13,10 @@ public class firstNonRepeatingChar {
         char[] wordArray = word.toLowerCase().toCharArray();
 
         for (char i : wordArray) {
-            if (myMap.containsKey(i)) {
-                myMap.put(i, myMap.get(i) + 1);
+            if (myMap.containsKey(i)) {//leetcode
+                myMap.put(i, myMap.get(i) + 1);//(e,3),
             } else {
-                myMap.put(i, 1);
+                myMap.put(i, 1);// (l,1),(e,2),(t,1),
             }
         }
         for (char i : wordArray) {

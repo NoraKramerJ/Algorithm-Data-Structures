@@ -5,36 +5,35 @@ import java.util.*;
 public class ListOfAnagram {
 
     public static List<List<String>> groupAnagrams(String[] strings) {
-        Map<String, List<String>> anagramGroups = new HashMap<>();
 
-        for (String string : strings) { //new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}
-            char[] chars = string.toCharArray();//each word is an array of chars
-            Arrays.sort(chars);//sort them.. [t,e,a],[t,e,a],
-            String canonical = new String(chars);//array in a string "tea","tea"
+       Map<String, List<String>> myMap = new HashMap<>();
 
-            if (anagramGroups.containsKey(canonical)) {//(tea,
-                anagramGroups.get(canonical).add(string);//group,(tea,[ate,
-            } else {
-                List<String> group = new ArrayList<>();
-                group.add(string);//{eat,
-                anagramGroups.put(canonical, group);//(tea,[eat])
-            }
-        }
+       for(String word : strings){
+           char[] chars=word.toCharArray();
+           Arrays.sort(chars);
+           String sorted= new String(chars);
+           if(myMap.containsKey(sorted)){
 
-        return new ArrayList<>(anagramGroups.values());
+               myMap.get(sorted).add(word);
+           }
+           else{
+               List<String> group= new ArrayList<>();
+               group.add(word);
+               myMap.put(sorted,group);
+           }
+
+       }return new ArrayList<>(myMap.values());
+
     }
 
-
     public static void main(String[] args) {
-        System.out.println("1st set:");
-        System.out.println(groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
 
-        System.out.println("\n2nd set:");
-        System.out.println(groupAnagrams(new String[]{"abc", "cba", "bac", "foo", "bar"}));
 
-        System.out.println("\n3rd set:");
-        System.out.println(groupAnagrams(new String[]{"listen", "silent", "triangle", "integral", "garden", "ranged"}));
+        String s="Java";
+        String s1="Java";
+     s1=s1.replace('a','o');
 
+       System.out.println(s1);
     }
 }
 /*

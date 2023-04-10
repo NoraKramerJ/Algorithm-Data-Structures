@@ -26,7 +26,14 @@ public class main {
 
         int[] nums = {1, 2, 3, 2, 1, 4, 5, 4,9,0,0};
         List<Integer> duplicates = findDuplicates(nums);
-        System.out.println(duplicates);
+      //  System.out.println(duplicates);
+
+        double a=(int)1.2;
+        System.out.println(a);
+        Animal animal=new Dog();
+        animal.print();
+        Dog dog= (Dog) new Animal();
+        dog.bark();
 
         /*
             EXPECTED OUTPUT:
@@ -36,7 +43,22 @@ public class main {
         */
 
     }
+    public static class Animal{
 
+            public void print(){
+                System.out.println("Animal");
+            }
+    }
+
+    public static class Dog extends Animal{
+
+            public void print(){
+                System.out.println("Woof");
+            }
+            public void bark(){
+                System.out.println("Bark");
+            }
+    }
 }
 
 

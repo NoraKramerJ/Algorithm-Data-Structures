@@ -9,32 +9,57 @@ public class SumOfTwoNumbers {
 
 
 
-        System.out.println(Arrays.toString(twoSum(new int[]{2, 7, 11, 15}, 9)));
-        System.out.println(Arrays.toString(twoSum(new int[]{3, 2, 4}, 6)));
-        System.out.println(Arrays.toString(twoSum(new int[]{3, 3}, 6)));
-        System.out.println(Arrays.toString(twoSum(new int[]{2, 3, 3, 4, 5}, 6)));
-        System.out.println(Arrays.toString(twoSum(new int[]{1, 2, 3, 4, 5}, 7)));
-        System.out.println(Arrays.toString(twoSum(new int[]{1, 2, 3, 4, 5}, 3)));
-        System.out.println(Arrays.toString(twoSum(new int[]{}, 0)));
+      //  System.out.println(Arrays.toString(twoSum(new int[]{1, 2, 3, 4, 5}, 3)));
+      // System.out.println(Arrays.toString(twoSum(new int[]{}, 0)));
     }
 
-    public static int[] twoSum(int[] nums, int target){
+    public static  int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> numMap = new HashMap<>();
 
-        Map<Integer,Integer>myMap=new HashMap<>();//{2, 3, 3, 4, 5}, target 6
-        for(int i=0;i<nums.length;i++){
-             int num=nums[i]; //4
-            int complement=target-num;//complement=6-2=4,6-3=3,6-3=3, 6-4=2
-       if(myMap.containsKey(complement)){//
-    return new int[]{myMap.get(complement), i};//(1,2),(0,3)
-}
-            myMap.put(num, i);//(2,0),(3,1)
+        // Iterate over each number in the input array
+        for (int i = 0; i < nums.length; i++) {
+            // Get the current number
+            int num = nums[i];
+            // Calculate the complement needed to reach the target
+            int complement = target - num;
+
+            // Check if the map contains the complement
+            if (numMap.containsKey(complement)) {
+                // Return the indices of the complement and current number
+                return new int[]{numMap.get(complement), i};
+            }
+            // Store the current number and its index in the map
+            numMap.put(num, i);
         }
 
+        // Return an empty array if no pair was found
         return new int[]{};
+
+    }
     }
 
 
+     /*   Map<Integer, Integer> numMap = new HashMap<>();
+
+    // Iterate over each number in the input array
+    for (int i = 0; i < nums.length; i++) {
+        // Get the current number
+        int num = nums[i];
+        // Calculate the complement needed to reach the target
+        int complement = target - num;
+
+        // Check if the map contains the complement
+        if (numMap.containsKey(complement)) {
+            // Return the indices of the complement and current number
+            return new int[]{numMap.get(complement), i};
+        }
+        // Store the current number and its index in the map
+        numMap.put(num, i);
     }
+
+    // Return an empty array if no pair was found
+    return new int[]{};
+}
 
 /*
 * twoSum()

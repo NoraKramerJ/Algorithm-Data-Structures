@@ -7,36 +7,27 @@ public class SumOfTwoNumbers {
 
     public static void main(String[] args) {
 
+        int[] num = {3, 4, 2, 3};
+        System.out.println(Arrays.toString(twoSum(num, 6)));
 
 
-      //  System.out.println(Arrays.toString(twoSum(new int[]{1, 2, 3, 4, 5}, 3)));
-      // System.out.println(Arrays.toString(twoSum(new int[]{}, 0)));
     }
 
-    public static  int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> numMap = new HashMap<>();
+    public static int[] twoSum(int[] nums, int target) { //{3,4,2},  6  {3,3}, {4,2}
 
-        // Iterate over each number in the input array
+        Map<Integer, Integer> myMap = new HashMap<>();
+
         for (int i = 0; i < nums.length; i++) {
-            // Get the current number
             int num = nums[i];
-            // Calculate the complement needed to reach the target
-            int complement = target - num;
-
-            // Check if the map contains the complement
-            if (numMap.containsKey(complement)) {
-                // Return the indices of the complement and current number
-                return new int[]{numMap.get(complement), i};
+            int remaining = target - num;
+            if (myMap.containsKey(remaining)) {
+                return new int[]{myMap.get(remaining), i};
             }
-            // Store the current number and its index in the map
-            numMap.put(num, i);
+            myMap.put(num, i);
         }
-
-        // Return an empty array if no pair was found
         return new int[]{};
-
     }
-    }
+}
 
 
      /*   Map<Integer, Integer> numMap = new HashMap<>();

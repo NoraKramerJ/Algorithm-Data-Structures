@@ -14,7 +14,17 @@ public class Main {
         myBST.insert(52);
         myBST.insert(82);
 
-        System.out.println(myBST.contain(18));
+      //  System.out.println(myBST.contain(18));
+        System.out.println("\nBreadth First Search:");
+        System.out.println( myBST.BFS());
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            Breadth First Search:
+            [47, 21, 76, 18, 27, 52, 82]
+
+        */
 
         /*
             THE LINES ABOVE CREATE THIS TREE:
@@ -26,9 +36,9 @@ public class Main {
 
 
         // ROOT MUST BE PUBLIC FOR THESE LINES TO WORK
-        System.out.println("Root: " + myBST.root.value);
-        System.out.println("\nRoot->Left: " + myBST.root.left.value);
-        System.out.println("\nRoot->Right: " + myBST.root.right.value);
+    //    System.out.println("Root: " + myBST.root.value);
+     //   System.out.println("\nRoot->Left: " + myBST.root.left.value);
+     //   System.out.println("\nRoot->Right: " + myBST.root.right.value);
 
 
         /*

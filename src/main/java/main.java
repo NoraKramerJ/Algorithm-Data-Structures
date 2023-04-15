@@ -24,7 +24,9 @@ public class main {
 
     public static void main(String[] args) {
 
-        int[] nums = {1, 2, 3, 2, 1, 4, 5, 4,9,0,0};
+        int[] nums = {1, 2, 3, 2, 1, 4, 5, 4,9};
+        int num=nums[0];
+        System.out.println(num);
         List<Integer> duplicates = findDuplicates(nums);
       //  System.out.println(duplicates);
 
@@ -32,8 +34,8 @@ public class main {
         System.out.println(a);
         Animal animal=new Dog();
         animal.print();
-        Dog dog= (Dog) new Animal();
-        dog.bark();
+      //  Dog dog= (Dog) new Animal();
+       // dog.bark();
 
         /*
             EXPECTED OUTPUT:

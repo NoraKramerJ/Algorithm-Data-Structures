@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class main {
 
@@ -24,6 +22,9 @@ public class main {
 
     public static void main(String[] args) {
 
+        Queue<Integer> queue=new LinkedList<>();
+     List<Integer>list=new LinkedList<>();
+    Vector<Integer> vector=new Stack<>(); 
         int[] nums = {1, 2, 3, 2, 1, 4, 5, 4,9};
         int num=nums[0];
         System.out.println(num);

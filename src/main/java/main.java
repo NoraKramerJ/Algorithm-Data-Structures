@@ -28,6 +28,17 @@ public class main {
 
 
     }
+    public static boolean hasUniqueChars(String string){
+
+            Set<Character> mySet=new HashSet<>();
+           char [] str= string.toCharArray();
+           for(char ch: str){
+               if(mySet.contains(ch)){
+                   return false;
+               } mySet.add(ch);
+           }
+           return true;
+    }
 
     public static void main(String[] args) {
         List<Integer> myList = List.of(1, 2, 3, 4, 1, 2, 5, 6, 7, 3, 4, 8, 9, 5);

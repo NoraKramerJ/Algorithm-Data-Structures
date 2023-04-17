@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class main {
 
@@ -20,32 +21,29 @@ public class main {
         }
 
 
+    public static List<Integer> removeDuplicates(List<Integer> myList) {
+
+        return myList.stream().distinct().collect(Collectors.toList());
+
+
+
+    }
+
     public static void main(String[] args) {
-
-        Queue<Integer> queue=new LinkedList<>();
-     List<Integer>list=new LinkedList<>();
-    Vector<Integer> vector=new Stack<>(); 
-        int[] nums = {1, 2, 3, 2, 1, 4, 5, 4,9};
-        int num=nums[0];
-        System.out.println(num);
-        List<Integer> duplicates = findDuplicates(nums);
-      //  System.out.println(duplicates);
-
-        double a=(int)1.2;
-        System.out.println(a);
-        Animal animal=new Dog();
-        animal.print();
-      //  Dog dog= (Dog) new Animal();
-       // dog.bark();
+        List<Integer> myList = List.of(1, 2, 3, 4, 1, 2, 5, 6, 7, 3, 4, 8, 9, 5);
+        List<Integer> newList = removeDuplicates(myList);
+        System.out.println(newList);
 
         /*
             EXPECTED OUTPUT:
             ----------------
-			[1, 2, 4]
+            [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+            (Order may be different as sets are unordered)
         */
 
     }
+
     public static class Animal{
 
             public void print(){

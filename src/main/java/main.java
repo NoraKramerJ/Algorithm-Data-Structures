@@ -27,10 +27,10 @@ public class main {
 
     }
 
-    public static int[] reverseString(int [] numbers){
+    public static int[] reverseArray(int [] numbers){
             int [] reverese=new int[numbers.length];
-            for(int i=0;i<numbers.length;i++){
-                reverese[numbers.length-1 -i]= numbers[i];
+            for(int i=numbers.length-1, j=0; i>=0;i--,j++){
+                reverese[j]= numbers[i];
 
 
         }
@@ -82,7 +82,7 @@ public class main {
         List<Integer> newList = removeDuplicates(myList);
         System.out.println(newList);
         System.out.println(lengthOfLongestSubstring("pwwkew"));
-        System.out.println(Arrays.toString(reverseString(new int[] {
+        System.out.println(Arrays.toString(reverseArray(new int[] {
             3,4,5})));
 
         /*

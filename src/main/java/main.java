@@ -85,6 +85,12 @@ public class main {
         System.out.println(Arrays.toString(reverseArray(new int[] {
             3,4,5})));
 
+        Map<Integer,Integer> numbers=new HashMap<>();
+        numbers.putAll(Map.of(3,2,4,5,6,7));
+        System.out.println(numbers);
+        for(Map.Entry m : numbers.entrySet()){
+            System.out.println(m.getKey() +"\t"+m.getValue());
+        }
         /*
             EXPECTED OUTPUT:
             ----------------

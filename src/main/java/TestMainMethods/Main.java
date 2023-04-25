@@ -2,6 +2,8 @@ package TestMainMethods;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -116,7 +118,14 @@ Explanation: There is no common prefix among the input strings.*/
         String [] words={"abcdef", "abhjjdlkls","abcjsjjdj"};
         Arrays.sort(words);
         System.out.println(Arrays.toString(words));
+        String s="hello";
+        List<Integer>lists=Arrays.asList(3,4,7,0,1);
+        lists.stream().filter(p->p %2==0).forEach(System.out::println);
+        Stream<Integer> randomInts = Stream.generate(() -> (int) (Math.random() * 100));
+Arrays.stream(new String []{"Ram","Sarah","fatih"}).filter(r ->r.startsWith("f")).map(String::toLowerCase).sorted().forEach(System.out::println);
 
+
+        }
        /* int[] array1 = {1, 3, 5};
         int[] array2 = {1, 3, 5};
         System.out.println(Arrays.equals(array1,array2));*/
@@ -150,6 +159,7 @@ Explanation: There is no common prefix among the input strings.*/
 
         */
 
+
     }
 
-}
+

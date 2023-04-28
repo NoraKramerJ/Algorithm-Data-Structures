@@ -24,8 +24,8 @@ public class BinarySearchTree {
         ArrayList<Integer>results=new ArrayList<>();
         queue.add(currentNode);
         while(queue.size()>0){
-            currentNode=queue.remove();
-            results.add(currentNode.value);
+            currentNode=queue.remove();//release the value
+            results.add(currentNode.value);//values
         }if(currentNode.left !=null){
             queue.add(currentNode.left);
         }if(currentNode.right!=null){
